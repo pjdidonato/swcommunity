@@ -51,21 +51,23 @@ body {
     margin-top: 5px;
     font-size: 20px;
     padding: 175px;
-    
-
-
-}
-
-section {
-    
     display:block;
-    float:left;
-    width:30%;
-    position:relative;
     
-   
+
 }
 
+
+#box {
+   
+    float:left;
+   
+    
+    height: 20px;
+    position: relative;
+    margin: auto;
+    
+    display: block;
+}
 #menu{
     height: 75%;
     width: 150px;

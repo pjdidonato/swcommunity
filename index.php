@@ -256,7 +256,7 @@
 
  </div>
 
-<div class="content"> 
+<div class='content'> 
 <section>
   <?php
         
