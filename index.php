@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script>
         $(function () {
@@ -85,6 +86,14 @@
             $heading = "customize your profile";
             $body = "edit your profile";
         break; 
+        case "login" ;
+            $heading = "customize your profile";
+            $body = "edit your profile";
+        break;
+        case "logout" ;
+        $heading = "customize your profile";
+        $body = "edit your profile";
+        break;
         case "settings" :
             $heading = "Settings";
             $body = "NBA";
@@ -112,6 +121,8 @@
     <a href="index.php?n=home"> Home </a>
     <a href="index.php?n=register">Register</a> 
     <a href="index.php?n=profile"> Profile</a> 
+    <a href="index.php?n=login"> Log In </a>
+    <a href="index.php?n=logout"> Log Out </a>
     <a href="index.php?n=settings"> Settings</a> 
     
     
@@ -121,7 +132,8 @@
 
 <div class="popup">
 </div>
-<ul id="menu">
+
+<div id="menu">
 
     <li>
         <div>Info</div>
@@ -168,6 +180,52 @@
         </ul>
     </li>
 </ul>
+<li>
+        <div>Info</div>
+        <ul>
+            <li> <div class="img" data-img="military.mov"> Info</div>  </li>
+            <li> <div class="img" data-img="HM.jpeg,spencers1.jpeg,FullSizeRender 4.jpeg,FullSizeRender 6.jpeg"> Info</div></li>
+            <li><div class="img" data-img="friends.jpeg,austin.mov"> Info</div></li>
+            <li><div class="img" data-img="kj1.jpeg,kj2.jpeg"> Info</div></li>
+            <li><div> Info</div></li>
+        </ul>
+    </li>
+
+    <li>
+        <div>Info</div>
+        <ul>
+            <li> <div>Info</div></li>
+            <li><div> Info</div></li>
+            <li><div> Info</div></li>
+            <li><div> Info</div></li>
+        </ul>
+    </li>
+    <li><div>Info</div>
+        <ul>
+            <li>
+                <div>Info</div>
+                <ul>
+
+                    <li><div class="music" data-music="01 Tigers Jaw - The Sun.mp3">Info</div></li>
+                    <li> <div class="music" data-music="Duran DuranRio.mp3">Info</div></li>
+                    <li><div class="music" data-music="Matt and Kim - Block After Block.mp3">Info</div></li>
+                    <li><div class="music" data-music="Saweetie - Tap In (Lyrics).mp3">Info</div></li>
+                    <li><div class="music" data-music="Turnstile - Death Grip.mp3">Info</div><li>
+                </ul>
+            </li>
+
+
+            <li><div>Info</div>
+                 <ul>
+                    <li><div>Info</div></li>
+                    <li><div> Info</div></li></u><li><div> Info</div></li>
+                    <li><div> Info</div></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div> 
 <script>
     audio = null;
     $(".music").click((e)=>{
@@ -194,7 +252,7 @@
         $('.popup').fadeIn();
     });
 </script>
-</div>
+
 
 
 
@@ -204,68 +262,32 @@
 
 <div class="popup1">
 </div>
-<ul id="menu1">
+<div id="menu1">
 
-    <li>
-        <div>Info</div>
-        <ul>
-            <li> <div class="img" data-img="military.mov"> Info</div>  </li>
-            <li> <div class="img" data-img="HM.jpeg,spencers1.jpeg,FullSizeRender 4.jpeg,FullSizeRender 6.jpeg"> Info</div></li>
-            <li><div class="img" data-img="friends.jpeg,austin.mov"> Info</div></li>
-            <li><div class="img" data-img="kj1.jpeg,kj2.jpeg"> Info</div></li>
-            <li><div> Info</div></li>
-        </ul>
-    </li>
-
-    <li>
-        <div>Info</div>
-        <ul>
-            <li> <div>Info</div></li>
-            <li><div> Info</div></li>
-            <li><div> Info</div></li>
-            <li><div> Info</div></li>
-        </ul>
-    </li>
-    <li><div>Info</div>
-        <ul>
-            <li>
-                <div>Info</div>
-                <ul>
-
-                    <li><div class="music" data-music="01 Tigers Jaw - The Sun.mp3">Info</div></li>
-                    <li> <div class="music" data-music="Duran DuranRio.mp3">Info</div></li>
-                    <li><div class="music" data-music="Matt and Kim - Block After Block.mp3">Info</div></li>
-                    <li><div class="music" data-music="Saweetie - Tap In (Lyrics).mp3">Info</div></li>
-                    <li><div class="music" data-music="Turnstile - Death Grip.mp3">Info</div><li>
-                </ul>
-            </li>
-
-
-            <li><div>Info</div>
-                 <ul>
-                    <li><div>Info</div></li>
-                    <li><div> Info</div></li></u><li><div> Info</div></li>
-                    <li><div> Info</div></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
+    
 
 
 
  </div>
 
-<div class='content'> 
-<section>
-  <?php
+<div id="content">
+    <div class="container">
+    <div id="content-nav">
+    <?php
         
         if ($_GET['n'] == 'register') {
             include("register.php");
         } 
+        if ($_GET['n'] == 'login') {
+            include("login.php");
+        } 
+        if ($_GET['n'] == 'logout') {
+            include("logout.php");
+        } 
 ?>
 
-<sectin>
+</div>
+</div>
 </div> 
 <div class="login">
 
